@@ -339,6 +339,7 @@
             var hour = sid.substr(sid.indexOf("c") + 1, sid.length);
             var hour2i = Number.parseInt(hour);
 
+            $(this).removeClass("hourClicked");
             if (hour2i >= self.startHours() && hour2i <= self.endHours()) $(this).addClass("hourClicked");
           });
         };
