@@ -8,22 +8,23 @@
   <body>
     <div class="app">
       <div id="startrange">
-        <input id="hours" class="range" type="text" min="0" max="23" data-bind="value: startHours" />
+        <input id="startHours" class="range" type="number" min="0" max="23" data-bind="value: startHours" />
         :
-        <input id="minutes" class="range" type="text" min="0" max="59" data-bind="value: startMinutes" />
+        <input id="startMinutes" class="range" type="number" min="0" max="59" data-bind="value: startMinutes" />
       </div>
       <div id="endrange">
-        <input id="hours" class="range" type="text"  min="0" max="23" data-bind="value: endHours" />
+        <input id="endHours" class="range" type="number"  min="0" max="23" data-bind="value: endHours" />
         :
-        <input id="minutes" class="range" type="text"  min="0" max="59" data-bind="value: endMinutes" />
+        <input id="endMinutes" class="range" type="number"  min="0" max="59" data-bind="value: endMinutes" />
       </div>      
-      <div class="timetable">
+      <div class="">
     <table>
+      <!-- -->
       <thead>
         <tr>
-          <th class="header"></th>
+          <th class="hoursHeader"></th>
           <th>00:00</th>
-          <th>00:00</th>
+          <th>01:00</th>
           <th>02:00</th>
           <th>03:00</th>
           <th>04:00</th>
@@ -48,207 +49,252 @@
           <th>23:00</th>        
         </tr>
       </thead>
+    </table>
+    <!-- -->
+    <table>
       <tbody>
         <tr>
-          <td id="mon" class="weekday mon" data-bind="click: selectHours">Понедельник</td>
-          <td id="r0c0" class="hour mon" data-bind="click: onCellClicked">.</td>
-          <td id="r0c1" class="hour mon" data-bind="click: onCellClicked">.</td>
-          <td id="r0c2" class="hour mon" data-bind="click: onCellClicked">.</td>
-          <td id="r0c3" class="hour mon" data-bind="click: onCellClicked">.</td>
-          <td id="r0c4" class="hour mon" data-bind="click: onCellClicked">.</td>
-          <td id="r0c5" class="hour mon" data-bind="click: onCellClicked">.</td>
-          <td id="r0c6" class="hour mon" data-bind="click: onCellClicked">.</td>
-          <td id="r0c7" class="hour mon" data-bind="click: onCellClicked">.</td>
-          <td id="r0c8" class="hour mon" data-bind="click: onCellClicked">.</td>
-          <td id="r0c9" class="hour mon" data-bind="click: onCellClicked">.</td>
-          <td id="r0c10" class="hour mon" data-bind="click: onCellClicked">.</td>
-          <td id="r0c11" class="hour mon" data-bind="click: onCellClicked">.</td>
-          <td id="r0c12" class="hour mon" data-bind="click: onCellClicked">.</td>
-          <td id="r0c13" class="hour mon" data-bind="click: onCellClicked">.</td>
-          <td id="r0c14" class="hour mon" data-bind="click: onCellClicked">.</td>
-          <td id="r0c15" class="hour mon" data-bind="click: onCellClicked">.</td>
-          <td id="r0c16" class="hour mon" data-bind="click: onCellClicked">.</td>
-          <td id="r0c17" class="hour mon" data-bind="click: onCellClicked">.</td>
-          <td id="r0c18" class="hour mon" data-bind="click: onCellClicked">.</td>
-          <td id="r0c19" class="hour mon" data-bind="click: onCellClicked">.</td>
-          <td id="r0c20" class="hour mon" data-bind="click: onCellClicked">.</td>
-          <td id="r0c21" class="hour mon" data-bind="click: onCellClicked">.</td>
-          <td id="r0c22" class="hour mon" data-bind="click: onCellClicked">.</td>
-          <td id="r0c23" class="hour mon" data-bind="click: onCellClicked">.</td>
+          <td>
+            <span id="mon" class="weekdayName" style="padding-right: 2px" data-bind="click: selectHours">Понедельник</span>
+            <img id="r0c0" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r0c1" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r0c2" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r0c3" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r0c4" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r0c5" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r0c6" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r0c7" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r0c8" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r0c9" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r0c10" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r0c11" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r0c12" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r0c13" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r0c14" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r0c15" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r0c16" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r0c17" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r0c18"  src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r0c19" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r0c20" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r0c21" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r0c22" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r0c23" src="./png/gray.png" data-bind="click: onCellClicked" />
+          </td>
         </tr>
         <tr>
-          <td id="tue" class="weekday tue" data-bind="click: selectHours">Вторник</td>
-          <td id="r1c0" class="hour tue" data-bind="click: onCellClicked">.</td>
-          <td id="r1c1" class="hour tue" data-bind="click: onCellClicked">.</td>
-          <td id="r1c2" class="hour tue" data-bind="click: onCellClicked">.</td>
-          <td id="r1c3" class="hour tue" data-bind="click: onCellClicked">.</td>
-          <td id="r1c4" class="hour tue" data-bind="click: onCellClicked">.</td>
-          <td id="r1c5" class="hour tue" data-bind="click: onCellClicked">.</td>
-          <td id="r1c6" class="hour tue" data-bind="click: onCellClicked">.</td>
-          <td id="r1c7" class="hour tue" data-bind="click: onCellClicked">.</td>
-          <td id="r1c8" class="hour tue" data-bind="click: onCellClicked">.</td>
-          <td id="r1c9" class="hour tue" data-bind="click: onCellClicked">.</td>
-          <td id="r1c10" class="hour tue" data-bind="click: onCellClicked">.</td>
-          <td id="r1c11" class="hour tue" data-bind="click: onCellClicked">.</td>
-          <td id="r1c12" class="hour tue" data-bind="click: onCellClicked">.</td>
-          <td id="r1c13" class="hour tue" data-bind="click: onCellClicked">.</td>
-          <td id="r1c14" class="hour tue" data-bind="click: onCellClicked">.</td>
-          <td id="r1c15" class="hour tue" data-bind="click: onCellClicked">.</td>
-          <td id="r1c16" class="hour tue" data-bind="click: onCellClicked">.</td>
-          <td id="r1c17" class="hour tue" data-bind="click: onCellClicked">.</td>
-          <td id="r1c18" class="hour tue" data-bind="click: onCellClicked">.</td>
-          <td id="r1c19" class="hour tue" data-bind="click: onCellClicked">.</td>
-          <td id="r1c20" class="hour tue" data-bind="click: onCellClicked">.</td>
-          <td id="r1c21" class="hour tue" data-bind="click: onCellClicked">.</td>
-          <td id="r1c22" class="hour tue" data-bind="click: onCellClicked">.</td>
-          <td id="r1c23" class="hour tue" data-bind="click: onCellClicked">.</td>
+          <td>
+            <span id="tue" class="weekdayName" style="padding-right: 41px" data-bind="click: selectHours">Вторник</span>
+            <img id="r1c0" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r1c1" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r1c2" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r1c3" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r1c4" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r1c5" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r1c6" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r1c7" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r1c8" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r1c9" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r1c10" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r1c11" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r1c12" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r1c13" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r1c14" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r1c15" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r1c16" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r1c17" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r1c18"  src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r1c19" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r1c20" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r1c21" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r1c22" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r1c23" src="./png/gray.png" data-bind="click: onCellClicked" />
+          </td>
         </tr>
         <tr>
-          <td id="wed" class="weekday wed" data-bind="click: selectHours">Среда</td>
-          <td id="r2c0" class="hour wed" data-bind="click: onCellClicked">.</td>
-          <td id="r2c1" class="hour wed" data-bind="click: onCellClicked">.</td>
-          <td id="r2c2" class="hour wed" data-bind="click: onCellClicked">.</td>
-          <td id="r2c3" class="hour wed" data-bind="click: onCellClicked">.</td>
-          <td id="r2c4" class="hour wed" data-bind="click: onCellClicked">.</td>
-          <td id="r2c5" class="hour wed" data-bind="click: onCellClicked">.</td>
-          <td id="r2c6" class="hour wed" data-bind="click: onCellClicked">.</td>
-          <td id="r2c7" class="hour wed" data-bind="click: onCellClicked">.</td>
-          <td id="r2c8" class="hour wed" data-bind="click: onCellClicked">.</td>
-          <td id="r2c9" class="hour wed" data-bind="click: onCellClicked">.</td>
-          <td id="r2c10" class="hour wed" data-bind="click: onCellClicked">.</td>
-          <td id="r2c11" class="hour wed" data-bind="click: onCellClicked">.</td>
-          <td id="r2c12" class="hour wed" data-bind="click: onCellClicked">.</td>
-          <td id="r2c13" class="hour wed" data-bind="click: onCellClicked">.</td>
-          <td id="r2c14" class="hour wed" data-bind="click: onCellClicked">.</td>
-          <td id="r2c15" class="hour wed" data-bind="click: onCellClicked">.</td>
-          <td id="r2c16" class="hour wed" data-bind="click: onCellClicked">.</td>
-          <td id="r2c17" class="hour wed" data-bind="click: onCellClicked">.</td>
-          <td id="r2c18" class="hour wed" data-bind="click: onCellClicked">.</td>
-          <td id="r2c19" class="hour wed" data-bind="click: onCellClicked">.</td>
-          <td id="r2c20" class="hour wed" data-bind="click: onCellClicked">.</td>
-          <td id="r2c21" class="hour wed" data-bind="click: onCellClicked">.</td>
-          <td id="r2c22" class="hour wed" data-bind="click: onCellClicked">.</td>
-          <td id="r2c23" class="hour wed" data-bind="click: onCellClicked">.</td>
+          <td>
+            <span id="wed" class="weekdayName" style="padding-right: 60px" data-bind="click: selectHours">Среда</span>
+            <img id="r2c0" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r2c1" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r2c2" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r2c3" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r2c4" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r2c5" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r2c6" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r2c7" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r2c8" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r2c9" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r2c10" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r2c11" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r2c12" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r2c13" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r2c14" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r2c15" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r2c16" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r2c17" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r2c18"  src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r2c19" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r2c20" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r2c21" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r2c22" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r2c23" src="./png/gray.png" data-bind="click: onCellClicked" />
+          </td>
         </tr>
         <tr>
-          <td id="thu" class="weekday thu" data-bind="click: selectHours">Четверг</td>
-          <td id="r3c0" class="hour thu" data-bind="click: onCellClicked">.</td>
-          <td id="r3c1" class="hour thu" data-bind="click: onCellClicked">.</td>
-          <td id="r3c2" class="hour thu" data-bind="click: onCellClicked">.</td>
-          <td id="r3c3" class="hour thu" data-bind="click: onCellClicked">.</td>
-          <td id="r3c4" class="hour thu" data-bind="click: onCellClicked">.</td>
-          <td id="r3c5" class="hour thu" data-bind="click: onCellClicked">.</td>
-          <td id="r3c6" class="hour thu" data-bind="click: onCellClicked">.</td>
-          <td id="r3c7" class="hour thu" data-bind="click: onCellClicked">.</td>
-          <td id="r3c8" class="hour thu" data-bind="click: onCellClicked">.</td>
-          <td id="r3c9" class="hour thu" data-bind="click: onCellClicked">.</td>
-          <td id="r3c10" class="hour thu" data-bind="click: onCellClicked">.</td>
-          <td id="r3c11" class="hour thu" data-bind="click: onCellClicked">.</td>
-          <td id="r3c12" class="hour thu" data-bind="click: onCellClicked">.</td>
-          <td id="r3c13" class="hour thu" data-bind="click: onCellClicked">.</td>
-          <td id="r3c14" class="hour thu" data-bind="click: onCellClicked">.</td>
-          <td id="r3c15" class="hour thu" data-bind="click: onCellClicked">.</td>
-          <td id="r3c16" class="hour thu" data-bind="click: onCellClicked">.</td>
-          <td id="r3c17" class="hour thu" data-bind="click: onCellClicked">.</td>
-          <td id="r3c18" class="hour thu" data-bind="click: onCellClicked">.</td>
-          <td id="r3c19" class="hour thu" data-bind="click: onCellClicked">.</td>
-          <td id="r3c20" class="hour thu" data-bind="click: onCellClicked">.</td>
-          <td id="r3c21" class="hour thu" data-bind="click: onCellClicked">.</td>
-          <td id="r3c22" class="hour thu" data-bind="click: onCellClicked">.</td>
-          <td id="r3c23" class="hour thu" data-bind="click: onCellClicked">.</td>
+          <td>
+            <span id="thu" class="weekdayName" style="padding-right: 46px" data-bind="click: selectHours">Четверг</span>
+            <img id="r3c0" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r3c1" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r3c2" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r3c3" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r3c4" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r3c5" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r3c6" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r3c7" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r3c8" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r3c9" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r3c10" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r3c11" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r3c12" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r3c13" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r3c14" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r3c15" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r3c16" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r3c17" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r3c18"  src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r3c19" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r3c20" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r3c21" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r3c22" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r3c23" src="./png/gray.png" data-bind="click: onCellClicked" />
+          </td>
         </tr>
         <tr>
-          <td id="fri" class="weekday fri" data-bind="click: selectHours">Пятница</td>
-          <td id="r4c0" class="hour fri" data-bind="click: onCellClicked">.</td>
-          <td id="r4c1" class="hour fri" data-bind="click: onCellClicked">.</td>
-          <td id="r4c2" class="hour fri" data-bind="click: onCellClicked">.</td>
-          <td id="r4c3" class="hour fri" data-bind="click: onCellClicked">.</td>
-          <td id="r4c4" class="hour fri" data-bind="click: onCellClicked">.</td>
-          <td id="r4c5" class="hour fri" data-bind="click: onCellClicked">.</td>
-          <td id="r4c6" class="hour fri" data-bind="click: onCellClicked">.</td>
-          <td id="r4c7" class="hour fri" data-bind="click: onCellClicked">.</td>
-          <td id="r4c8" class="hour fri" data-bind="click: onCellClicked">.</td>
-          <td id="r4c9" class="hour fri" data-bind="click: onCellClicked">.</td>
-          <td id="r4c10" class="hour fri" data-bind="click: onCellClicked">.</td>
-          <td id="r4c11" class="hour fri" data-bind="click: onCellClicked">.</td>
-          <td id="r4c12" class="hour fri" data-bind="click: onCellClicked">.</td>
-          <td id="r4c13" class="hour fri" data-bind="click: onCellClicked">.</td>
-          <td id="r4c14" class="hour fri" data-bind="click: onCellClicked">.</td>
-          <td id="r4c15" class="hour fri" data-bind="click: onCellClicked">.</td>
-          <td id="r4c16" class="hour fri" data-bind="click: onCellClicked">.</td>
-          <td id="r4c17" class="hour fri" data-bind="click: onCellClicked">.</td>
-          <td id="r4c18" class="hour fri" data-bind="click: onCellClicked">.</td>
-          <td id="r4c19" class="hour fri" data-bind="click: onCellClicked">.</td>
-          <td id="r4c20" class="hour fri" data-bind="click: onCellClicked">.</td>
-          <td id="r4c21" class="hour fri" data-bind="click: onCellClicked">.</td>
-          <td id="r4c22" class="hour fri" data-bind="click: onCellClicked">.</td>
-          <td id="r4c23" class="hour fri" data-bind="click: onCellClicked">.</td>
+          <td>
+            <span id="fri" class="weekdayName" style="padding-right: 40px" data-bind="click: selectHours">Пятница</span>
+            <img id="r4c0" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r4c1" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r4c2" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r4c3" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r4c4" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r4c5" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r4c6" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r4c7" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r4c8" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r4c9" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r4c10" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r4c11" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r4c12" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r4c13" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r4c14" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r4c15" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r4c16" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r4c17" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r4c18"  src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r4c19" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r4c20" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r4c21" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r4c22" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r4c23" src="./png/gray.png" data-bind="click: onCellClicked" />
+          </td>
         </tr>
         <tr>
-          <td id="sat" class="weekday sat" data-bind="click: selectHours">Суббота</td>
-          <td id="r5c0" class="hour sat" data-bind="click: onCellClicked">.</td>
-          <td id="r5c1" class="hour sat" data-bind="click: onCellClicked">.</td>
-          <td id="r5c2" class="hour sat" data-bind="click: onCellClicked">.</td>
-          <td id="r5c3" class="hour sat" data-bind="click: onCellClicked">.</td>
-          <td id="r5c4" class="hour sat" data-bind="click: onCellClicked">.</td>
-          <td id="r5c5" class="hour sat" data-bind="click: onCellClicked">.</td>
-          <td id="r5c6" class="hour sat" data-bind="click: onCellClicked">.</td>
-          <td id="r5c7" class="hour sat" data-bind="click: onCellClicked">.</td>
-          <td id="r5c8" class="hour sat" data-bind="click: onCellClicked">.</td>
-          <td id="r5c9" class="hour sat" data-bind="click: onCellClicked">.</td>
-          <td id="r5c10" class="hour sat" data-bind="click: onCellClicked">.</td>
-          <td id="r5c11" class="hour sat" data-bind="click: onCellClicked">.</td>
-          <td id="r5c12" class="hour sat" data-bind="click: onCellClicked">.</td>
-          <td id="r5c13" class="hour sat" data-bind="click: onCellClicked">.</td>
-          <td id="r5c14" class="hour sat" data-bind="click: onCellClicked">.</td>
-          <td id="r5c15" class="hour sat" data-bind="click: onCellClicked">.</td>
-          <td id="r5c16" class="hour sat" data-bind="click: onCellClicked">.</td>
-          <td id="r5c17" class="hour sat" data-bind="click: onCellClicked">.</td>
-          <td id="r5c18" class="hour sat" data-bind="click: onCellClicked">.</td>
-          <td id="r5c19" class="hour sat" data-bind="click: onCellClicked">.</td>
-          <td id="r5c20" class="hour sat" data-bind="click: onCellClicked">.</td>
-          <td id="r5c21" class="hour sat" data-bind="click: onCellClicked">.</td>
-          <td id="r5c22" class="hour sat" data-bind="click: onCellClicked">.</td>
-          <td id="r5c23" class="hour sat" data-bind="click: onCellClicked">.</td>
-        </tr>
+          <td>
+            <span id="sat" class="weekdayName" style="padding-right: 45px" data-bind="click: selectHours">Суббота</span>
+            <img id="r5c0" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r5c1" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r5c2" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r5c3" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r5c4" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r5c5" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r5c6" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r5c7" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r5c8" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r5c9" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r5c10" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r5c11" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r5c12" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r5c13" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r5c14" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r5c15" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r5c16" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r5c17" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r5c18"  src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r5c19" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r5c20" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r5c21" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r5c22" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r5c23" src="./png/gray.png" data-bind="click: onCellClicked" />
+          </td>
+        </tr>   
         <tr>
-          <td id="sun" class="weekday sun" data-bind="click: selectHours">Воскресенье</td>
-          <td id="r6c0" class="hour sun" data-bind="click: onCellClicked">.</td>
-          <td id="r6c1" class="hour sun" data-bind="click: onCellClicked">.</td>
-          <td id="r6c2" class="hour sun" data-bind="click: onCellClicked">.</td>
-          <td id="r6c3" class="hour sun" data-bind="click: onCellClicked">.</td>
-          <td id="r6c4" class="hour sun" data-bind="click: onCellClicked">.</td>
-          <td id="r6c5" class="hour sun" data-bind="click: onCellClicked">.</td>
-          <td id="r6c6" class="hour sun" data-bind="click: onCellClicked">.</td>
-          <td id="r6c7" class="hour sun" data-bind="click: onCellClicked">.</td>
-          <td id="r6c8" class="hour sun" data-bind="click: onCellClicked">.</td>
-          <td id="r6c9" class="hour sun" data-bind="click: onCellClicked">.</td>
-          <td id="r6c10" class="hour sun" data-bind="click: onCellClicked">.</td>
-          <td id="r6c11" class="hour sun" data-bind="click: onCellClicked">.</td>
-          <td id="r6c12" class="hour sun" data-bind="click: onCellClicked">.</td>
-          <td id="r6c13" class="hour sun" data-bind="click: onCellClicked">.</td>
-          <td id="r6c14" class="hour sun" data-bind="click: onCellClicked">.</td>
-          <td id="r6c15" class="hour sun" data-bind="click: onCellClicked">.</td>
-          <td id="r6c16" class="hour sun" data-bind="click: onCellClicked">.</td>
-          <td id="r6c17" class="hour sun" data-bind="click: onCellClicked">.</td>
-          <td id="r6c18" class="hour sun" data-bind="click: onCellClicked">.</td>
-          <td id="r6c19" class="hour sun" data-bind="click: onCellClicked">.</td>
-          <td id="r6c20" class="hour sun" data-bind="click: onCellClicked">.</td>
-          <td id="r6c21" class="hour sun" data-bind="click: onCellClicked">.</td>
-          <td id="r6c22" class="hour sun" data-bind="click: onCellClicked">.</td>
-          <td id="r6c23" class="hour sun" data-bind="click: onCellClicked">.</td>
-        </tr>
+          <td>
+            <span id="sun" class="weekdayName" style="padding-right: 9px" data-bind="click: selectHours">Воскресенье</span>
+            <img id="r6c0" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r6c1" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r6c2" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r6c3" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r6c4" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r6c5" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r6c6" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r6c7" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r6c8" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r6c9" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r6c10" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r6c11" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r6c12" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r6c13" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r6c14" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r6c15" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r6c16" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r6c17" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r6c18"  src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r6c19" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r6c20" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r6c21" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r6c22" src="./png/gray.png" data-bind="click: onCellClicked" />
+            <img id="r6c23" src="./png/gray.png" data-bind="click: onCellClicked" />
+          </td>
+        </tr>                     
       </tbody>
     </table>
     </div>
   </div>
     <!-- --> <span class="controls"> <!-- -->
-      <input id="autofill" class="btnControls" type="button" value="Заполнить автоматически" data-bind="click: autoFillHourColors" />
-      <input id="reset" class="btnControls" type="button" value="Очистить" data-bind="click: resetHourColors" />
+      <button id="autofill" class="btnControls" data-bind="click: fillHours">Заполнить автоматически</button>
+      <button id="reset" class="btnControls" data-bind="click: resetHours">Очистить</button>
     <!-- --> </span> <!-- -->
     <style>
+      button:hover {background-color: #3e8e41}
+
+button:active {
+  background-color: #31a335;
+  color: #abbccc;
+  box-shadow: 0 5px #788999;
+  transform: translateY(4px);
+}
+
+      img {
+        height: 22px;
+        padding: 0.01px;
+        width: 48px;
+      }
+
+      input {
+        width: 30px;
+      }
+
+      th {
+        width: 2px;
+      }
+
       .btnControls {
         border-radius: 10px;
+        width: auto;
+      }
+
+      .controls {
+        float: right;
       }
 
       .hour {
@@ -261,86 +307,87 @@
         color: #0000ff;       
       }
 
-      .header, .weekday {
+      .header {
         background-color: #ffffff;
         color: #000000;
+        border-left: 0px;
         min-height: 50px;
         min-width: 50px;
       }
 
-      .controls {
-        float: right;
-      }
-
-      .range {
-        width: 15px;
-      }
+     .hoursHeader {
+       width: 9%;
+     }
 
       #reset {
-        margin-right: 562px;
+        margin-right: 525px;
+      }
+
+      #startHours, #endHours {
+        margin-left: 35%;
       }
     </style>
     <script>
       var ViewModel = function() {
         var self = this;
 
-        this.startHours = ko.observable("00");
-        this.startMinutes = ko.observable("00");
+        this.startHours = ko.observable("0");
+        this.startMinutes = ko.observable("31");
         this.endHours = ko.observable("23");
-        this.endMinutes = ko.observable("59");        
+        this.endMinutes = ko.observable("22");        
         
-        this.autoFillHourColors = function() {
-          $(".hour").addClass("hourClicked");
+        this.fillHours = function() {
+          $("img").attr("src", "png/blue.png");
         };
 
-        this.time2minutes = function(h, m) {
-          var h2i = Number.parseInt(h);
-          var m2i = Number.parseint(m);          
-          var minutes = -1;
-
-          if (this.timeCheck(h, m)) {
-            minutes = h2i + m2i;
-          }
-
-          return minutes;
-        };
-
-        this.timeCheck = function(h, m) {
-          var h2i = Number.parseInt(h);
-          var m2i = Number.parseint(m);
-          var areHoursValid = h2i >= 0 && h2i <= 23;
-          var areMinutesValid = m2i >= 0 && m2i <= 59;
-
-          if (areHoursValid && areMinutesValid) return true;
-          return false;
-        };
-
-        this.resetHourColors = function() {
-          $(".hour").removeClass("hourClicked");
+        this.resetHours = function() {
+          $("img").attr("src", "png/gray.png");
         };
 
         this.onCellClicked = function(d, e) {
           var cell = $("#" + e.target.id);
 
-          if (cell.hasClass("hourClicked")) {
-            cell.removeClass("hourClicked");
+          if (cell.attr("src") !== "./png/gray.png") {
+            cell.attr("src", "./png/gray.png"); 
           }
-          else {
-            cell.addClass("hourClicked");
+          else if (cell.attr("src") !== "./png/blue.png") {
+            cell.attr("src", "./png/blue.png"); 
           }
         };
 
         this.selectHours = function(d, e) {
           var weekDayId = e.target.id;
           var weekDay = $("#" + weekDayId);          
+          var cells = weekDay.siblings("img");
           
-          weekDay.siblings().each(function() {
+          $(cells).each(function() {
             var sid = $(this).attr("id");
-            var hour = sid.substr(sid.indexOf("c") + 1, sid.length);
-            var hour2i = Number.parseInt(hour);
+            var sh = sid.substr(sid.indexOf("c") + 1, sid.length);
+            var siblingHour = Number(sh);
+            var startHours2i = Number(self.startHours());
+            var startMinutes2i = Number(self.startMinutes());
+            var endHours2i = Number(self.endHours());
+            var endMinutes2i = Number(self.endMinutes());
 
-            $(this).removeClass("hourClicked");
-            if (hour2i >= self.startHours() && hour2i <= self.endHours()) $(this).addClass("hourClicked");
+            $(this).attr("src", "./png/gray.png");
+
+            if (sh >= startHours2i && sh <= endHours2i) {
+              if (siblingHour === startHours2i && startMinutes2i >= 30) {
+                $(this).attr("src", "./png/grayblue.png");
+              }
+              else if (siblingHour === startHours2i && startMinutes2i < 30) {
+                $(this).attr("src", "./png/blue.png");
+              }
+              else if (siblingHour === endHours2i && endMinutes2i < 30) {
+                $(this).attr("src", "./png/bluegray.png");
+              }
+              else if (siblingHour === endHours2i && endMinutes2i >= 30) {
+                $(this).attr("src", "./png/blue.png");
+              }
+              else {
+                $(this).attr("src", "./png/blue.png");
+              }
+            }
           });
         };
       };
